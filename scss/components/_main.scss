@@ -12,15 +12,14 @@ html {
     text-size-adjust: 100%;
 }
 
-
 *, *:before, *:after {
     box-sizing: inherit;
-}
+} 
 
 body {
-  background-color: #f2f2f2;
+  background-color: $light;
   font-family: 'Lato', sans-serif;
-  font-size: 21px;
+  font-size: 1em;
   text-align: center;
 }
 
@@ -30,46 +29,32 @@ body {
 }
 
 /* button */
+
 .button{
-  display: block;
-  float: left;
-  position: relative;
-  text-decoration: none;
-  color: #333;
-  border: 3px solid #333333;
-  padding: 20px 30px;
-  margin: 40px;
+    @include button($spot, 40px);
+}
+
+.button2 {
+    @include button($spot2, 40px);
 }
 
 /* blue border offset */
 .button:after {
-  content: '';
-  border: 3px solid #3600fc;
-  top: 5px;
-  left: 5px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  color: #f2f2f2;
-  white-space:nowrap;
+    @include btn-after($spot2);
+    @include all-linear(250ms);
 }
 
-/* grey border position */
-.button:active {
-  top: 3px;
-  left: 3px;
+.button2:after {
+    @include btn-after($spot);
+    @include all-linear(250ms);
 }
+
 
 /* blue border position */
-.button:active:after{
-  top: 2px;
-  left: 2px
-}
 
-/* fill background color */
-.button:hover{
-  background: rgba(242,242,242,1);
+.button:active:after, .button2:active:after,
+.button:hover:after, .button2:hover:after {
+  top: -10px;
 }
 
 .by {
