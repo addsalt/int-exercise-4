@@ -17,10 +17,11 @@ html {
 } 
 
 body {
-  background-color: $light;
-  font-family: 'Lato', sans-serif;
-  font-size: 1em;
-  text-align: center;
+    background-color: $background;
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    color: $light;
 }
 
 .container {
@@ -31,21 +32,21 @@ body {
 /* button */
 
 .button{
-    @include button($spot, 40px);
+    @include button($dark, 40px);
 }
 
 .button2 {
-    @include button($spot2, 40px);
+    @include button($light, 40px);
 }
 
 /* blue border offset */
 .button:after {
-    @include btn-after($spot2);
+    @include btn-after($light);
     @include all-linear(250ms);
 }
 
 .button2:after {
-    @include btn-after($spot);
+    @include btn-after($dark);
     @include all-linear(250ms);
 }
 
@@ -61,4 +62,13 @@ body {
   display: block;
   float: left;
   width: 100%;
+}
+
+.by a {
+    color: $light;
+    @include all-linear(250ms);
+}
+
+.by a:hover {
+    color: $dark;
 }
